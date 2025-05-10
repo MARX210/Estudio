@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -46,8 +47,8 @@ export default function PortalPage() {
         />
       </FadeInView>
 
-      <div className="grid lg:grid-cols-3 gap-8">
-        <FadeInView className="lg:col-span-1 space-y-6" delay="delay-100">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <FadeInView className="md:col-span-1 lg:col-span-1 space-y-6" delay="delay-100">
           <Card className="shadow-lg">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-xl">
@@ -79,7 +80,7 @@ export default function PortalPage() {
           </Card>
         </FadeInView>
 
-        <FadeInView className="lg:col-span-2 space-y-8" delay="delay-200">
+        <FadeInView className="md:col-span-1 lg:col-span-2 space-y-8" delay="delay-200">
           <Card className="shadow-lg">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-xl">
@@ -90,28 +91,30 @@ export default function PortalPage() {
             </CardHeader>
             <CardContent>
               {mockAppointments.length > 0 ? (
-                <Table>
-                  <TableHeader>
-                    <TableRow>
-                      <TableHead>Data</TableHead>
-                      <TableHead>Hora</TableHead>
-                      <TableHead>Tipo</TableHead>
-                      <TableHead>Status</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {mockAppointments.map((apt) => (
-                      <TableRow key={apt.id}>
-                        <TableCell>{apt.date.toLocaleDateString('pt-BR')}</TableCell>
-                        <TableCell>{apt.time}</TableCell>
-                        <TableCell>{apt.type}</TableCell>
-                        <TableCell>
-                          <Badge variant={getStatusBadgeVariant(apt.status)}>{apt.status}</Badge>
-                        </TableCell>
+                <div className="relative w-full overflow-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Data</TableHead>
+                        <TableHead>Hora</TableHead>
+                        <TableHead>Tipo</TableHead>
+                        <TableHead>Status</TableHead>
                       </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
+                    </TableHeader>
+                    <TableBody>
+                      {mockAppointments.map((apt) => (
+                        <TableRow key={apt.id}>
+                          <TableCell>{apt.date.toLocaleDateString('pt-BR')}</TableCell>
+                          <TableCell>{apt.time}</TableCell>
+                          <TableCell>{apt.type}</TableCell>
+                          <TableCell>
+                            <Badge variant={getStatusBadgeVariant(apt.status)}>{apt.status}</Badge>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
               ) : (
                 <p className="text-muted-foreground text-center py-4">Nenhum agendamento encontrado.</p>
               )}
@@ -128,28 +131,30 @@ export default function PortalPage() {
             </CardHeader>
             <CardContent>
                {mockTrainings.length > 0 ? (
-                <Table>
-                  <TableHeader>
-                    <TableRow>
-                      <TableHead>Treinamento</TableHead>
-                      <TableHead>Data</TableHead>
-                      <TableHead>Duração</TableHead>
-                      <TableHead>Status</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {mockTrainings.map((trn) => (
-                      <TableRow key={trn.id}>
-                        <TableCell className="font-medium">{trn.title}</TableCell>
-                        <TableCell>{trn.date}</TableCell>
-                        <TableCell>{trn.duration}</TableCell>
-                         <TableCell>
-                          <Badge variant={getStatusBadgeVariant(trn.status)}>{trn.status}</Badge>
-                        </TableCell>
+                <div className="relative w-full overflow-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Treinamento</TableHead>
+                        <TableHead>Data</TableHead>
+                        <TableHead>Duração</TableHead>
+                        <TableHead>Status</TableHead>
                       </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
+                    </TableHeader>
+                    <TableBody>
+                      {mockTrainings.map((trn) => (
+                        <TableRow key={trn.id}>
+                          <TableCell className="font-medium">{trn.title}</TableCell>
+                          <TableCell>{trn.date}</TableCell>
+                          <TableCell>{trn.duration}</TableCell>
+                          <TableCell>
+                            <Badge variant={getStatusBadgeVariant(trn.status)}>{trn.status}</Badge>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
               ) : (
                 <p className="text-muted-foreground text-center py-4">Nenhum treinamento programado.</p>
               )}
@@ -160,3 +165,4 @@ export default function PortalPage() {
     </div>
   );
 }
+
