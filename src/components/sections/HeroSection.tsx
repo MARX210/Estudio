@@ -48,7 +48,7 @@ export function HeroSection() {
               </div>
             </FadeInView>
           </div>
-          <FadeInView delay="delay-200" className="relative mt-8 md:mt-0">
+          <FadeInView delay="delay-200" className="relative mt-8 md:mt-0 w-full mx-auto lg:max-w-md xl:max-w-lg">
             <div className="aspect-square rounded-xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-105">
               <Image
                 src="https://picsum.photos/seed/psychologist/600/600"
@@ -68,3 +68,4 @@ export function HeroSection() {
     </section>
   );
 }
+
