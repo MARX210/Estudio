@@ -4,7 +4,9 @@ import { SectionTitle } from '@/components/ui/SectionTitle';
 import { FadeInView } from '@/components/animations/FadeInView';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Linkedin, Mail } from 'lucide-react';
+import { MessageCircle, Mail } from 'lucide-react';
+
+const whatsAppNumber = "5511999999999"; // Same as in ContactFormSection for consistency
 
 export function AboutSection() {
   return (
@@ -33,9 +35,9 @@ export function AboutSection() {
                 Com vasta experiência em consultoria para empresas de diversos portes e segmentos, dedico-me a auxiliar organizações a cumprirem as exigências da NR-1, focando na gestão eficaz dos riscos psicossociais. Minha abordagem é estratégica e humanizada, visando não apenas a conformidade legal, mas a promoção de uma cultura de bem-estar e alta performance.
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-                <Button asChild variant="outline" className="shadow-sm hover:shadow-md w-full sm:w-auto">
-                  <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
+                <Button asChild variant="outline" className="shadow-sm hover:shadow-md w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white border-green-500 hover:border-green-600">
+                  <Link href={`https://wa.me/${whatsAppNumber}`} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
                   </Link>
                 </Button>
                 <Button asChild className="shadow-md hover:shadow-lg w-full sm:w-auto">
