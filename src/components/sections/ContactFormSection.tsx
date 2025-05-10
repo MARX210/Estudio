@@ -4,14 +4,12 @@
 import { Button } from "@/components/ui/button";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { FadeInView } from "@/components/animations/FadeInView";
-import { Mail, Phone, MapPin, Instagram, MessageCircle } from "lucide-react";
+import { Instagram, MessageCircle } from "lucide-react";
 import Link from "next/link";
 
 // Example contact details (replace with actual data)
 const whatsAppNumber = "5511999999999"; // Include country code, no spaces or symbols
 const instagramUsername = "psychosocial_solutions_br";
-const emailAddress = "contato@psychosocialsolutions.com.br";
-const phoneNumber = "(11) 99999-9999";
 
 
 export function ContactFormSection() {
@@ -23,45 +21,13 @@ export function ContactFormSection() {
           subtitle="Vamos conversar sobre como podemos ajudar sua empresa a alcançar a conformidade com a NR-1 e promover um ambiente de trabalho mais saudável."
         />
         <FadeInView>
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 bg-card p-6 md:p-10 rounded-xl shadow-lg border">
-            {/* Informações de Contato (Left Side) */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-primary">Informações de Contato</h3>
-              <p className="text-muted-foreground">
-                Estamos à disposição para esclarecer suas dúvidas e discutir suas necessidades.
-              </p>
-              <div className="space-y-4">
-                <a 
-                  href={`tel:${phoneNumber.replace(/\D/g, '')}`} 
-                  className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
-                >
-                  <Phone className="w-5 h-5 text-primary group-hover:animate-pulse shrink-0" />
-                  <span>{phoneNumber} (Telefone)</span>
-                </a>
-                <a 
-                  href={`mailto:${emailAddress}`} 
-                  className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
-                >
-                  <Mail className="w-5 h-5 text-primary group-hover:animate-pulse shrink-0" />
-                  <span>{emailAddress}</span>
-                </a>
-                <div className="flex items-start gap-3 text-foreground">
-                  <MapPin className="w-5 h-5 text-primary mt-1 shrink-0" />
-                  <span>Atendimento em todo o Brasil (Online e Presencial sob consulta)</span>
-                </div>
-              </div>
-              <p className="text-sm text-muted-foreground italic">
-                Resposta em até 24h úteis para emails. Para urgências, utilize o WhatsApp.
-              </p>
-            </div>
-
-            {/* Redes Sociais e WhatsApp (Right Side) */}
-            <div className="space-y-6">
+          <div className="bg-card p-6 md:p-10 rounded-xl shadow-lg border">
+            <div className="space-y-6 text-center">
               <h3 className="text-2xl font-semibold text-primary">Fale Conosco Diretamente</h3>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground max-w-xl mx-auto">
                 Envie uma mensagem rápida pelo WhatsApp ou conecte-se conosco no Instagram.
               </p>
-              <div className="space-y-4 flex flex-col items-start">
+              <div className="space-y-4 flex flex-col sm:flex-row sm:space-y-0 sm:space-x-4 items-center justify-center">
                 <Button asChild size="lg" className="w-full sm:w-auto shadow-md hover:shadow-lg transition-shadow bg-green-500 hover:bg-green-600 text-white">
                   <Link href={`https://wa.me/${whatsAppNumber}`} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 h-5 w-5" /> WhatsApp
@@ -83,3 +49,4 @@ export function ContactFormSection() {
     </section>
   );
 }
+
