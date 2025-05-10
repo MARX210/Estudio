@@ -64,7 +64,7 @@ body {
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
     --primary: 197 71% 58%; /* Slightly brighter blue for dark mode */
-    --primary-foreground: 210 40% 9.8%;
+    --primary-foreground: 0 0% 100%; /* Ensured white text on primary for dark mode too */
     --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217 33% 17%;
@@ -95,9 +95,21 @@ body {
   body {
     @apply bg-background text-foreground;
     @apply antialiased; /* Ensure smooth fonts */
+    -webkit-tap-highlight-color: transparent; /* Improve touch experience */
   }
   section {
     @apply py-12 md:py-20; /* Consistent section padding */
+  }
+  /* Ensure tap targets are sufficiently large */
+  button, a, input[type="button"], input[type="submit"] {
+    min-height: 44px; /* WCAG recommendation for touch targets */
+    min-width: 44px; /* WCAG recommendation for touch targets */
+    @apply flex items-center justify-center; /* Helps with icon alignment inside buttons */
+  }
+  /* Adjust for ShadCN icon buttons which might be smaller by design */
+  button[class*="h-10"][class*="w-10"], button[class*="h-9"][class*="w-9"], button[class*="size-icon"] {
+    min-height: initial;
+    min-width: initial;
   }
 }
 
@@ -116,4 +128,10 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-primary;
+}
+
+/* Ensure content is not obscured by fixed navigation or footers if any */
+body {
+  padding-top: 0; /* Adjust if navbar becomes fixed and opaque */
+  padding-bottom: 0; /* Adjust if footer becomes fixed */
 }

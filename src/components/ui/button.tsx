@@ -42,6 +42,10 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
+    // If a custom bg color is applied via className (e.g., bg-green-500),
+    // ensure text-primary-foreground is also applied or can be overridden.
+    // For specific custom buttons like WhatsApp, text color should be explicitly set (e.g., text-white).
+    // The current implementation of ContactFormSection does this (text-white for WhatsApp button).
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
