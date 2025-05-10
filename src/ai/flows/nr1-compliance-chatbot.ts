@@ -70,13 +70,12 @@ const nr1ComplianceChatbotFlow = ai.defineFlow(
   },
   async input => {
     const {output} = await prompt(input);
-    if (!output) {
-      // This case should ideally be handled by the model generating a valid output according to the schema.
-      // If output is null/undefined, it might indicate an issue with the model or prompt.
-      // Returning a generic error or a message asking to rephrase.
-      return { answer: "Desculpe, não consegui gerar uma resposta. Por favor, tente reformular sua pergunta." };
+    // More robust check for the output and its structure
+    if (!output || typeof output.answer !== 'string') {
+      console.warn("nr1ComplianceChatbotFlow: Output from prompt was undefined, malformed, or 'answer' was not a string. Output:", output);
+      return { answer: "Desculpe, não consegui gerar uma resposta clara neste momento. Poderia tentar reformular sua pergunta?" };
     }
-    return output;
+    return output; // output is Nr1ComplianceChatbotOutput, which is { answer: string }
   }
 );
 
