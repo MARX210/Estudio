@@ -46,7 +46,7 @@ export function ContactFormSection() {
                 </div>
               </FadeInView>
               <FadeInView delay="delay-300">
-                <p className="text-sm text-muted-foreground text-justify leading-relaxed">
+                <p className="text-sm text-muted-foreground text-center leading-relaxed">
                   Clique nos botões acima para iniciar uma conversa ou visitar nosso perfil.
                 </p>
               </FadeInView>
