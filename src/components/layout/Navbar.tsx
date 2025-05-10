@@ -15,7 +15,7 @@ const navLinks = [
   { href: '/#contexto', label: 'NR-1' },
   { href: '/#sobre', label: 'Sobre' },
   { href: '/#contato', label: 'Contato' },
-  { href: '/portal', label: 'Portal do Cliente' },
+  // { href: '/portal', label: 'Portal do Cliente' }, // Removed portal link
 ];
 
 export function Navbar() {
