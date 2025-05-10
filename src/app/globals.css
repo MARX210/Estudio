@@ -98,18 +98,13 @@ body {
     -webkit-tap-highlight-color: transparent; /* Improve touch experience */
   }
   section {
-    @apply py-12 md:py-20; /* Consistent section padding */
+    @apply py-10 md:py-16; /* Consistent section padding, adjusted for mobile first */
   }
-  /* Ensure tap targets are sufficiently large */
+  /* Ensure tap targets are sufficiently large, but allow ShadCN to control specific button sizes */
   button, a, input[type="button"], input[type="submit"] {
-    min-height: 44px; /* WCAG recommendation for touch targets */
-    min-width: 44px; /* WCAG recommendation for touch targets */
+    /* min-height: 44px; WCAG recommendation, handled by ShadCN's button sizes */
+    /* min-width: 44px; WCAG recommendation, handled by ShadCN's button sizes */
     @apply flex items-center justify-center; /* Helps with icon alignment inside buttons */
-  }
-  /* Adjust for ShadCN icon buttons which might be smaller by design */
-  button[class*="h-10"][class*="w-10"], button[class*="h-9"][class*="w-9"], button[class*="size-icon"] {
-    min-height: initial;
-    min-width: initial;
   }
 }
 
