@@ -30,17 +30,36 @@ const prompt = ai.definePrompt({
   name: 'nr1ComplianceChatbotPrompt',
   input: {schema: Nr1ComplianceChatbotInputSchema},
   output: {schema: Nr1ComplianceChatbotOutputSchema},
-  prompt: `You are a helpful AI chatbot that answers questions about NR-1 compliance and provides initial risk assessment guidelines.
-  Use the following information to answer the user's query:
-  - NR-1 is a Brazilian regulatory standard related to occupational safety and health management.
-  - It requires organizations to identify, evaluate, and manage psychosocial risks in the workplace.
-  - Psychosocial risks include stress, burnout, harassment, and excessive pressure.
-  - Compliance with NR-1 helps organizations create healthy and productive work environments.
-  - Risk assessment involves identifying potential hazards and evaluating their impact on employee well-being.
-  - Organizations should implement preventive measures and action plans to mitigate identified risks.
-  - Consulting with specialists in occupational psychology can help ensure compliance and effective risk management.
+  prompt: `You are an expert AI assistant specializing in Brazilian Regulatory Standard NR-1, focusing on occupational safety, health management, and psychosocial risks in the workplace. Your goal is to provide comprehensive, accurate, and helpful answers regarding NR-1 compliance and initial risk assessment guidelines.
 
-  Query: {{{query}}}`,
+You should draw upon your extensive knowledge base about Brazilian labor laws, NR-1 specifics, best practices for managing psychosocial risks (such as stress, burnout, harassment), and creating healthy work environments.
+
+When responding to the user's query, provide detailed and actionable information. If the query is vague, ask for clarification. If the query is outside the scope of NR-1 or psychosocial risks, politely indicate that you are specialized in these areas but can try to provide general information if relevant or guide the user to appropriate resources.
+
+User Query: {{{query}}}
+
+Provide a clear, well-structured, and informative answer. Use bullet points or numbered lists for complex information if it enhances readability.
+`,
+  config: {
+    safetySettings: [
+      {
+        category: 'HARM_CATEGORY_HATE_SPEECH',
+        threshold: 'BLOCK_MEDIUM_AND_ABOVE',
+      },
+      {
+        category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT',
+        threshold: 'BLOCK_MEDIUM_AND_ABOVE',
+      },
+      {
+        category: 'HARM_CATEGORY_HARASSMENT',
+        threshold: 'BLOCK_MEDIUM_AND_ABOVE',
+      },
+      {
+        category: 'HARM_CATEGORY_DANGEROUS_CONTENT',
+        threshold: 'BLOCK_MEDIUM_AND_ABOVE',
+      },
+    ],
+  },
 });
 
 const nr1ComplianceChatbotFlow = ai.defineFlow(
@@ -51,6 +70,13 @@ const nr1ComplianceChatbotFlow = ai.defineFlow(
   },
   async input => {
     const {output} = await prompt(input);
-    return output!;
+    if (!output) {
+      // This case should ideally be handled by the model generating a valid output according to the schema.
+      // If output is null/undefined, it might indicate an issue with the model or prompt.
+      // Returning a generic error or a message asking to rephrase.
+      return { answer: "Desculpe, não consegui gerar uma resposta. Por favor, tente reformular sua pergunta." };
+    }
+    return output;
   }
 );
+
