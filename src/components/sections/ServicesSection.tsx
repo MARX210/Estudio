@@ -59,7 +59,7 @@ export function ServicesSection() {
                   </CardHeader>
                   <CardContent className="text-center flex-grow p-4 sm:p-6 pt-0">
                     <FadeInView delay="delay-200">
-                      <p className="text-sm text-muted-foreground">{service.description}</p>
+                      <p className="text-sm text-muted-foreground text-justify leading-relaxed">{service.description}</p>
                     </FadeInView>
                   </CardContent>
                 </Card>
@@ -71,3 +71,4 @@ export function ServicesSection() {
     </section>
   );
 }
+

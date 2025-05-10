@@ -20,7 +20,7 @@ export function HeroSection() {
               </FadeInView>
             </h1>
             <FadeInView delay="delay-300">
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground text-justify leading-relaxed">
                 Consultoria especializada para promover a excelência em saúde ocupacional e garantir a conformidade legal da sua empresa.
               </p>
             </FadeInView>

@@ -27,7 +27,7 @@ export function ContactFormSection() {
                 <h3 className="text-2xl font-semibold text-primary">Fale Conosco Diretamente</h3>
               </FadeInView>
               <FadeInView delay="delay-100">
-                <p className="text-muted-foreground max-w-xl mx-auto">
+                <p className="text-muted-foreground max-w-xl mx-auto text-justify leading-relaxed">
                   Envie uma mensagem rápida pelo WhatsApp ou conecte-se conosco no Instagram.
                 </p>
               </FadeInView>
@@ -46,7 +46,7 @@ export function ContactFormSection() {
                 </div>
               </FadeInView>
               <FadeInView delay="delay-300">
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground text-justify leading-relaxed">
                   Clique nos botões acima para iniciar uma conversa ou visitar nosso perfil.
                 </p>
               </FadeInView>
@@ -57,3 +57,4 @@ export function ContactFormSection() {
     </section>
   );
 }
+

@@ -44,7 +44,7 @@ export function Nr1ContextSection() {
                     <li key={item} className="flex items-start">
                       <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mr-2 mt-0.5 shrink-0" />
                       <FadeInView delay={`delay-${index * 100 + 100}`}>
-                        <span className="text-sm text-muted-foreground">{item}</span>
+                        <span className="text-sm text-muted-foreground text-justify leading-relaxed">{item}</span>
                       </FadeInView>
                     </li>
                   ))}
@@ -66,7 +66,7 @@ export function Nr1ContextSection() {
                     <li key={item} className="flex items-start">
                       <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-red-500 mr-2 mt-0.5 shrink-0" />
                       <FadeInView delay={`delay-${index * 100 + 100}`}>
-                        <span className="text-sm text-muted-foreground">{item}</span>
+                        <span className="text-sm text-muted-foreground text-justify leading-relaxed">{item}</span>
                       </FadeInView>
                     </li>
                   ))}
@@ -79,3 +79,4 @@ export function Nr1ContextSection() {
     </section>
   );
 }
+

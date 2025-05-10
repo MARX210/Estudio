@@ -18,7 +18,7 @@ export function SectionTitle({ title, subtitle, className, titleClassName, subti
       </FadeInView>
       {subtitle && (
         <FadeInView delay="delay-150">
-          <p className={cn("text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto", subtitleClassName)}>{subtitle}</p>
+          <p className={cn("text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-justify leading-relaxed", subtitleClassName)}>{subtitle}</p>
         </FadeInView>
       )}
     </div>

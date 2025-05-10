@@ -36,7 +36,7 @@ export function AboutSection() {
                 <p className="text-sm sm:text-md text-muted-foreground font-medium">CRP: 08/44838 — Especialista em Psicologia Organizacional e do Trabalho</p>
               </FadeInView>
               <FadeInView delay="delay-200">
-                <p className="mt-4 text-foreground leading-relaxed text-sm sm:text-base">
+                <p className="mt-4 text-foreground leading-relaxed text-sm sm:text-base text-justify">
                   Com vasta experiência em consultoria para empresas de diversos portes e segmentos, dedico-me a auxiliar organizações a cumprirem as exigências da NR-1, focando na gestão eficaz dos riscos psicossociais. Minha abordagem é estratégica e humanizada, visando não apenas a conformidade legal, mas a promoção de uma cultura de bem-estar e alta performance.
                 </p>
               </FadeInView>
@@ -61,3 +61,4 @@ export function AboutSection() {
     </section>
   );
 }
+
