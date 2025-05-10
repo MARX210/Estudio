@@ -6,6 +6,7 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 import { FadeInView } from "@/components/animations/FadeInView";
 import { Instagram, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 // Example contact details (replace with actual data)
 const whatsAppNumber = "5511999999999"; // Include country code, no spaces or symbols
@@ -24,6 +25,15 @@ export function ContactFormSection() {
           <div className="bg-card p-6 md:p-10 rounded-xl shadow-lg border">
             <div className="space-y-6 text-center">
               <FadeInView>
+                <div className="flex justify-center mb-4">
+                  <Image 
+                    src="/logo.svg" 
+                    alt="PsychoSocial Solutions Logo" 
+                    width={64} 
+                    height={64} 
+                    data-ai-hint="abstract brainwave" 
+                  />
+                </div>
                 <h3 className="text-2xl font-semibold text-primary">Fale Conosco Diretamente</h3>
               </FadeInView>
               <FadeInView delay="delay-100">
