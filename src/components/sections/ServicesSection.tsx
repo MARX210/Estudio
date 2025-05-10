@@ -53,10 +53,14 @@ export function ServicesSection() {
                 <Card className="h-full hover:shadow-xl transition-shadow duration-300 flex flex-col bg-card">
                   <CardHeader className="items-center text-center p-4 sm:p-6">
                     <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-primary mb-3 sm:mb-4" />
-                    <CardTitle className="text-md sm:text-lg font-semibold text-foreground">{service.title}</CardTitle>
+                    <FadeInView delay="delay-100">
+                      <CardTitle className="text-md sm:text-lg font-semibold text-foreground">{service.title}</CardTitle>
+                    </FadeInView>
                   </CardHeader>
                   <CardContent className="text-center flex-grow p-4 sm:p-6 pt-0">
-                    <p className="text-sm text-muted-foreground">{service.description}</p>
+                    <FadeInView delay="delay-200">
+                      <p className="text-sm text-muted-foreground">{service.description}</p>
+                    </FadeInView>
                   </CardContent>
                 </Card>
               </FadeInView>
@@ -67,4 +71,3 @@ export function ServicesSection() {
     </section>
   );
 }
-

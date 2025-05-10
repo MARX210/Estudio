@@ -34,14 +34,18 @@ export function Nr1ContextSection() {
             <Card className="h-full hover:shadow-lg transition-shadow duration-300 bg-card">
               <CardHeader className="flex flex-row items-center gap-3 p-4 sm:p-6">
                 <ScrollText className="w-6 h-6 sm:w-8 sm:h-8 text-primary shrink-0" />
-                <CardTitle className="text-md sm:text-lg font-semibold">Obrigações Empresariais Conforme a NR-1</CardTitle>
+                <FadeInView>
+                  <CardTitle className="text-md sm:text-lg font-semibold">Obrigações Empresariais Conforme a NR-1</CardTitle>
+                </FadeInView>
               </CardHeader>
               <CardContent className="p-4 sm:p-6 pt-0">
                 <ul className="space-y-2">
-                  {obligations.map((item) => (
+                  {obligations.map((item, index) => (
                     <li key={item} className="flex items-start">
                       <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mr-2 mt-0.5 shrink-0" />
-                      <span className="text-sm text-muted-foreground">{item}</span>
+                      <FadeInView delay={`delay-${index * 100 + 100}`}>
+                        <span className="text-sm text-muted-foreground">{item}</span>
+                      </FadeInView>
                     </li>
                   ))}
                 </ul>
@@ -52,14 +56,18 @@ export function Nr1ContextSection() {
             <Card className="h-full hover:shadow-lg transition-shadow duration-300 bg-card">
               <CardHeader className="flex flex-row items-center gap-3 p-4 sm:p-6">
                 <AlertTriangle className="w-6 h-6 sm:w-8 sm:h-8 text-destructive shrink-0" />
-                <CardTitle className="text-md sm:text-lg font-semibold">Principais Riscos Psicossociais</CardTitle>
+                <FadeInView>
+                  <CardTitle className="text-md sm:text-lg font-semibold">Principais Riscos Psicossociais</CardTitle>
+                </FadeInView>
               </CardHeader>
               <CardContent className="p-4 sm:p-6 pt-0">
                 <ul className="space-y-2">
-                  {psychosocialRisks.map((item) => (
+                  {psychosocialRisks.map((item, index) => (
                     <li key={item} className="flex items-start">
                       <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-red-500 mr-2 mt-0.5 shrink-0" />
-                       <span className="text-sm text-muted-foreground">{item}</span>
+                      <FadeInView delay={`delay-${index * 100 + 100}`}>
+                        <span className="text-sm text-muted-foreground">{item}</span>
+                      </FadeInView>
                     </li>
                   ))}
                 </ul>
@@ -71,4 +79,3 @@ export function Nr1ContextSection() {
     </section>
   );
 }
-

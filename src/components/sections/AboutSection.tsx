@@ -29,23 +29,31 @@ export function AboutSection() {
               />
             </div>
             <div className="text-center md:text-left">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">Marlon Amorim</h3>
-              <p className="text-sm sm:text-md text-muted-foreground font-medium">CRP: 08/44838 — Especialista em Psicologia Organizacional e do Trabalho</p>
-              <p className="mt-4 text-foreground leading-relaxed text-sm sm:text-base">
-                Com vasta experiência em consultoria para empresas de diversos portes e segmentos, dedico-me a auxiliar organizações a cumprirem as exigências da NR-1, focando na gestão eficaz dos riscos psicossociais. Minha abordagem é estratégica e humanizada, visando não apenas a conformidade legal, mas a promoção de uma cultura de bem-estar e alta performance.
-              </p>
-              <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-                <Button asChild variant="outline" className="shadow-sm hover:shadow-md w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white border-green-500 hover:border-green-600">
-                  <Link href={`https://wa.me/${whatsAppNumber}`} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
-                  </Link>
-                </Button>
-                <Button asChild className="shadow-md hover:shadow-lg w-full sm:w-auto">
-                  <Link href="/#contato">
-                    <Mail className="mr-2 h-4 w-4" /> Entre em Contato
-                  </Link>
-                </Button>
-              </div>
+              <FadeInView>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">Marlon Amorim</h3>
+              </FadeInView>
+              <FadeInView delay="delay-100">
+                <p className="text-sm sm:text-md text-muted-foreground font-medium">CRP: 08/44838 — Especialista em Psicologia Organizacional e do Trabalho</p>
+              </FadeInView>
+              <FadeInView delay="delay-200">
+                <p className="mt-4 text-foreground leading-relaxed text-sm sm:text-base">
+                  Com vasta experiência em consultoria para empresas de diversos portes e segmentos, dedico-me a auxiliar organizações a cumprirem as exigências da NR-1, focando na gestão eficaz dos riscos psicossociais. Minha abordagem é estratégica e humanizada, visando não apenas a conformidade legal, mas a promoção de uma cultura de bem-estar e alta performance.
+                </p>
+              </FadeInView>
+              <FadeInView delay="delay-300">
+                <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                  <Button asChild variant="outline" className="shadow-sm hover:shadow-md w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white border-green-500 hover:border-green-600">
+                    <Link href={`https://wa.me/${whatsAppNumber}`} target="_blank" rel="noopener noreferrer">
+                      <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
+                    </Link>
+                  </Button>
+                  <Button asChild className="shadow-md hover:shadow-lg w-full sm:w-auto">
+                    <Link href="/#contato">
+                      <Mail className="mr-2 h-4 w-4" /> Entre em Contato
+                    </Link>
+                  </Button>
+                </div>
+              </FadeInView>
             </div>
           </div>
         </FadeInView>
@@ -53,4 +61,3 @@ export function AboutSection() {
     </section>
   );
 }
-
