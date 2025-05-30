@@ -13,10 +13,10 @@ export function HeroSection() {
           <div className="space-y-6 text-center md:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
               <FadeInView>
-                <span className="block text-primary">Adequação à Nova NR-1:</span>
+                <span className="block text-primary">Gestão de Estratégia Psicossociais</span>
               </FadeInView>
               <FadeInView delay="delay-150">
-                <span className="block text-foreground">Gestão Estratégica de Riscos Psicossociais</span>
+                <span className="block text-foreground">Ferramentas que Unem Saúde Mental, Desempenho e Humanização nas Organizações</span>
               </FadeInView>
             </h1>
             <FadeInView delay="delay-300">
