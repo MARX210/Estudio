@@ -4,7 +4,6 @@ import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from '@/components/ui/toaster';
-import { ChatbotWidget } from '@/components/chatbot/ChatbotWidget';
 import { Providers } from '@/components/layout/Providers';
 
 const geist = Geist({ // Using default Geist configuration
@@ -33,7 +32,6 @@ export default function RootLayout({
             <main className="flex-grow">{children}</main>
             <Footer />
           </div>
-          <ChatbotWidget />
           <Toaster />
         </Providers>
       </body>
