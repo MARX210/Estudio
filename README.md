@@ -90,14 +90,6 @@ O projeto está publicado na plataforma Vercel e pode ser acessado pelo link aba
 👉 [https://estudio-3y6b.vercel.app/](https://estudio-3y6b.vercel.app/)
 
 ---
-
-## 📝 Licença
-
-Este projeto está sob a licença **MIT**.  
-Sinta-se livre para utilizar, modificar e compartilhar.
-
----
-
 ## 🧠 Autor
 
 Desenvolvido por **Marx Vinicius** 👋  
