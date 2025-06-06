@@ -1,7 +1,15 @@
-
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { SectionTitle } from '@/components/ui/SectionTitle';
-import { ScrollText, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import {
+  ScrollText,
+  AlertTriangle,
+  CheckCircle2,
+} from 'lucide-react';
 import { FadeInView } from '@/components/animations/FadeInView';
 
 const obligations = [
@@ -23,19 +31,24 @@ const psychosocialRisks = [
 
 export function Nr1ContextSection() {
   return (
-    <section id="contexto" className="bg-secondary/30">
+    <section id="contexto" className="bg-secondary/30 py-12">
       <div className="container mx-auto px-4 md:px-6">
         <SectionTitle
           title="Nova Exigência da NR-1: Riscos Psicossociais"
           subtitle="Entenda as responsabilidades da sua empresa e os principais riscos a serem gerenciados para assegurar um ambiente de trabalho em conformidade e produtivo."
         />
-        <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+        <div className="grid md:grid-cols-2 gap-6 mt-10">
           <FadeInView>
-            <Card className="h-full hover:shadow-lg transition-shadow duration-300 bg-card">
+            <Card
+              className="h-full bg-card border border-[#1c2233]
+              shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-[1.03] hover:ring-1 hover:ring-primary"
+            >
               <CardHeader className="flex flex-row items-center gap-3 p-4 sm:p-6">
                 <ScrollText className="w-6 h-6 sm:w-8 sm:h-8 text-primary shrink-0" />
                 <FadeInView>
-                  <CardTitle className="text-md sm:text-lg font-semibold">Obrigações Empresariais Conforme a NR-1</CardTitle>
+                  <CardTitle className="text-md sm:text-lg font-semibold">
+                    Obrigações Empresariais Conforme a NR-1
+                  </CardTitle>
                 </FadeInView>
               </CardHeader>
               <CardContent className="p-4 sm:p-6 pt-0">
@@ -44,7 +57,9 @@ export function Nr1ContextSection() {
                     <li key={item} className="flex items-start">
                       <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mr-2 mt-0.5 shrink-0" />
                       <FadeInView delay={`delay-${index * 100 + 100}`}>
-                        <span className="text-sm text-muted-foreground text-justify leading-relaxed">{item}</span>
+                        <span className="text-sm text-muted-foreground text-justify leading-relaxed">
+                          {item}
+                        </span>
                       </FadeInView>
                     </li>
                   ))}
@@ -53,11 +68,16 @@ export function Nr1ContextSection() {
             </Card>
           </FadeInView>
           <FadeInView delay="delay-100">
-            <Card className="h-full hover:shadow-lg transition-shadow duration-300 bg-card">
+            <Card
+              className="h-full bg-card border border-[#1c2233]
+              shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-[1.03] hover:ring-1 hover:ring-red-500"
+            >
               <CardHeader className="flex flex-row items-center gap-3 p-4 sm:p-6">
                 <AlertTriangle className="w-6 h-6 sm:w-8 sm:h-8 text-destructive shrink-0" />
                 <FadeInView>
-                  <CardTitle className="text-md sm:text-lg font-semibold">Principais Riscos Psicossociais</CardTitle>
+                  <CardTitle className="text-md sm:text-lg font-semibold">
+                    Principais Riscos Psicossociais
+                  </CardTitle>
                 </FadeInView>
               </CardHeader>
               <CardContent className="p-4 sm:p-6 pt-0">
@@ -66,7 +86,9 @@ export function Nr1ContextSection() {
                     <li key={item} className="flex items-start">
                       <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-red-500 mr-2 mt-0.5 shrink-0" />
                       <FadeInView delay={`delay-${index * 100 + 100}`}>
-                        <span className="text-sm text-muted-foreground text-justify leading-relaxed">{item}</span>
+                        <span className="text-sm text-muted-foreground text-justify leading-relaxed">
+                          {item}
+                        </span>
                       </FadeInView>
                     </li>
                   ))}
@@ -79,4 +101,3 @@ export function Nr1ContextSection() {
     </section>
   );
 }
-

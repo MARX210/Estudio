@@ -1,15 +1,16 @@
-
-"use client";
+'use client';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
 interface FadeInViewProps {
   children: ReactNode;
   className?: string;
-  delay?: string; // e.g., 'delay-200' (Tailwind class)
-  duration?: string; // e.g., 'duration-1000' (Tailwind class)
+  delay?: string; // Ex: 'delay-200'
+  duration?: string; // Ex: 'duration-700'
   threshold?: number;
   triggerOnce?: boolean;
+  direction?: 'up' | 'down' | 'left' | 'right';
+  scale?: boolean;
 }
 
 export function FadeInView({
@@ -19,6 +20,8 @@ export function FadeInView({
   duration = 'duration-700',
   threshold = 0.1,
   triggerOnce = true,
+  direction = 'up',
+  scale = false,
 }: FadeInViewProps) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -32,23 +35,31 @@ export function FadeInView({
             observer.unobserve(ref.current);
           }
         } else if (!triggerOnce) {
-            setIsVisible(false);
+          setIsVisible(false);
         }
       },
       { threshold }
     );
 
     const currentRef = ref.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
+    if (currentRef) observer.observe(currentRef);
 
     return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
+      if (currentRef) observer.unobserve(currentRef);
     };
   }, [threshold, triggerOnce]);
+
+  const translateClass = !isVisible
+    ? direction === 'up'
+      ? 'translate-y-8'
+      : direction === 'down'
+      ? '-translate-y-8'
+      : direction === 'left'
+      ? 'translate-x-8'
+      : '-translate-x-8'
+    : 'translate-x-0 translate-y-0';
+
+  const scaleClass = scale ? (isVisible ? 'scale-100' : 'scale-95') : '';
 
   return (
     <div
@@ -57,7 +68,9 @@ export function FadeInView({
         'transition-all ease-out',
         duration,
         delay,
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8',
+        isVisible ? 'opacity-100' : 'opacity-0',
+        translateClass,
+        scaleClass,
         className
       )}
     >
