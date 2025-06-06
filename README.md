@@ -1,97 +1,91 @@
 
-# 🎨 Estúdio - Website Profissional
+# 🌐 Site - Psicólogo Marlon Amorim
 
-Este é um projeto de um website institucional desenvolvido para um estúdio criativo. O objetivo do site é fornecer uma presença online elegante, moderna e responsiva, ideal para divulgar serviços, portfólio, informações de contato e fortalecer a identidade visual da marca.
-
-O site conta com um design minimalista, animações suaves e navegação simples, proporcionando uma experiência agradável tanto no desktop quanto no mobile.
-
-🚀 **Acesse o site online:**  
-👉 [https://estudio-3y6b.vercel.app/](https://estudio-3y6b.vercel.app/)
+Este projeto é um **site profissional** desenvolvido para o psicólogo Marlon Amorim, especialista em saúde ocupacional e consultoria em saúde mental corporativa. O objetivo do site é apresentar, de forma clara e acessível, os serviços oferecidos, promover a conscientização sobre a saúde mental no ambiente corporativo e facilitar o contato com o profissional.
 
 ---
 
-## 🔥 Tecnologias utilizadas
+## 📌 Sobre o Projeto
 
-O projeto foi desenvolvido com as seguintes tecnologias e ferramentas modernas:
+O site oferece uma navegação moderna e fluida, com informações sobre:
 
-- **Next.js** – Framework React para desenvolvimento web full-stack
-- **TypeScript** – Tipagem estática para código mais seguro e escalável
-- **Tailwind CSS** – Framework de utilitários para estilização rápida e responsiva
-- **PostCSS** – Processador de CSS para otimização
-- **Vercel** – Plataforma de deploy para aplicações Next.js
-
----
-
-## ✨ Funcionalidades
-
-- Página inicial moderna e responsiva
-- Animações suaves que trazem dinamismo ao site
-- Design focado em simplicidade, sofisticação e usabilidade
-- Seções institucionais: apresentação, serviços e contato
-- Código organizado e de fácil manutenção
-- Ótima performance, otimização para SEO e tempo de carregamento reduzido
+- Gestão de Estratégias Psicossociais
+- Consultoria especializada para empresas (NR-1, PGR e GRO)
+- Treinamentos, workshops, programas de bem-estar e palestras
+- Contato direto via WhatsApp e Instagram
 
 ---
 
-## 🚧 Status do Projeto
+## 🚀 Tecnologias Utilizadas
 
-🟢 **Projeto Concluído** – Melhorias futuras podem ser adicionadas.
+- **Next.js** – Framework React para aplicações web rápidas e escaláveis
+- **TypeScript** – Superset do JavaScript que adiciona tipagem estática
+- **Tailwind CSS** – Framework CSS utilitário para criação de interfaces responsivas e modernas
+- **PostCSS** – Ferramenta de processamento de CSS para otimização e compatibilidade
+- **Vercel** – Plataforma de hospedagem otimizada para aplicações frontend com deploy contínuo
 
 ---
 
-## 💻 Como executar o projeto localmente
+## 🌎 Acesso ao Site
 
-Siga os passos abaixo para rodar este projeto na sua máquina:
+O site está hospedado gratuitamente na plataforma **Vercel**.
 
-1. Clone o repositório:
+🔗 **Link de acesso:** [https://estudio-3y6b.vercel.app](https://estudio-3y6b.vercel.app)
+
+---
+
+## ⚙️ Como Executar Localmente
+
+Para rodar este projeto localmente, siga os passos abaixo:
 
 ```bash
+# 1. Clone este repositório
 git clone https://github.com/MARX210/Estudio.git
-```
 
-2. Acesse o diretório do projeto:
-
-```bash
+# 2. Acesse a pasta do projeto
 cd Estudio
-```
 
-3. Instale as dependências:
-
-```bash
+# 3. Instale as dependências
 npm install
-```
-ou
-```bash
-yarn
-```
 
-4. Inicie o servidor de desenvolvimento:
-
-```bash
+# 4. Inicie o servidor de desenvolvimento
 npm run dev
 ```
-ou
-```bash
-yarn dev
-```
 
-5. Abra seu navegador e acesse:
-
-```
-http://localhost:3000
-```
+Após isso, acesse `http://localhost:3000` no navegador para visualizar o projeto.
 
 ---
 
-## 📦 Deploy
+## 📈 Status do Projeto
 
-O projeto está publicado na plataforma Vercel e pode ser acessado pelo link abaixo:
-
-👉 [https://estudio-3y6b.vercel.app/](https://estudio-3y6b.vercel.app/)
+✅ Projeto concluído e publicado online.  
+Manutenção e melhorias podem ser aplicadas futuramente conforme necessário.
 
 ---
-## 🧠 Autor
 
-Desenvolvido por **Marx Vinicius** 👋  
-- [GitHub](https://github.com/MARX210)  
-- [Portfólio](https://portfoliomarx.netlify.app)  
+## 💡 Proposta Tecnológica
+
+O site foi idealizado com foco em:
+
+- Alto desempenho e carregamento rápido
+- Layout responsivo adaptável a dispositivos móveis e desktop
+- Facilidade de edição futura pelo desenvolvedor
+- Conformidade com boas práticas de acessibilidade e SEO
+
+---
+
+## 👨‍💻 Desenvolvedor
+
+Este projeto foi desenvolvido por:
+
+**Marx Vinicius**  
+🔗 [GitHub](https://github.com/MARX210)  
+🌐 [Portfólio](https://portfoliomarx.netlify.app)
+
+---
+
+## 🔒 Licença
+
+Este projeto é **proprietário e de uso exclusivo do autor**.  
+**Não é permitida a cópia, distribuição, modificação ou uso deste projeto sem autorização prévia.**  
+Todos os direitos reservados © Marx Vinicius.
